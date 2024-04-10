@@ -1,0 +1,38 @@
+:root{
+  --main-color: rgb(189, 163, 56);
+  --main-transition:.5s;
+}
+*{
+  -webkit-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: #eee;
+}
+.content{
+  padding: 15px;
+  border-radius: 20px;
+  background-color: #ccc;
+}
+.nodates{
+  min-height: 300px;
+}
+.btn{
+  background-color: var(--main-color);
+  margin:5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: var(--main-transition);
+  font-weight: bold;
+}
+.btn:hover{
+  background-color: #e6c84d;
+}
+.image{
+  width: 80px;
+}
+.img{
+  width: 100%;
+  border-radius: 50%;
+}

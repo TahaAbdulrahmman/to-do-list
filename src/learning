@@ -1,0 +1,195 @@
+import React from "react";
+import CardDetails from "./components/card";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import PageNF from "./components/page404";
+import { BrowserRouter, Routes,Route } from "react-router-dom";
+import Navbarm from "./components/navbar";
+import "./app.css"
+/////////////////////////////////// Cards
+/*
+export default function cards (){
+  let data = [
+    {title:"css",src :css, discreption:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio adipisci ea debitis. Earum, eius, nesciunt illo ipsa quis reprehenderit iure dolorem odio error, voluptas ea cum quod voluptatum architecto maiores"},
+    {title:"html",src :html, discreption:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio adipisci ea debitis. Earum, eius, nesciunt illo ipsa quis reprehenderit iure dolorem odio error, voluptas ea cum quod voluptatum architecto maiores"},
+    {title:"responsive",src :responsive, discreption:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio adipisci ea debitis. Earum, eius, nesciunt illo ipsa quis reprehenderit iure dolorem odio error, voluptas ea cum quod voluptatum architecto maiores"},
+    {title:"html",src :responsive, discreption:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio adipisci ea debitis. Earum, eius, nesciunt illo ipsa quis reprehenderit iure dolorem odio error, voluptas ea cum quod voluptatum architecto maiores"},
+  ]
+  let printIndex = (massega)=>{
+    console.log(massega)
+  }
+  let serch = (e)=>{
+    console.log(e.target.value)
+  }
+  return(
+    <div>
+    <input type="text" onChange={serch}/>
+      <div className="cards">
+        {data.map((item,index)=>{
+          return(
+            <CardDetails key = {index} title = {item.title} src={item.src}
+            discreption={item.discreption} onClick={printIndex}/>
+            )
+        })}
+      </div>
+    </div>
+  )
+}
+*/
+
+/////////////////////////////////// BrowserRouter
+/*
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/home";
+import Services from "./components/services";
+import About from "./components/about";
+import Menu from "./components/navbar";
+import PageNF from "./components/page404"
+export default function MyApp (){
+  return(
+    <div>
+      <Menu/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/services" element={<Services/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="*" element={<PageNF/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
+}
+*/
+
+/////////////////////////////////// useState
+/*
+import {React,useState} from "react";
+export default function useState (){
+  let [num,setnum] = useState(0)
+  function PlusNum(){
+    setnum(num + 1)
+  }
+  function MinseNum(){
+    setnum(num - 1)
+  }
+  return (
+    <div>
+    <button onClick={PlusNum} className="btn">+</button>
+    <button onClick={MinseNum} className="btn">-</button>
+    {num}
+    </div>
+  )
+}
+*/
+
+/////////////////////////////////// useEffect
+/*
+export default function useState (){
+  let [num,setnum] = useState(0)
+  function PlusNum(){
+    setnum(num + 1)
+  }
+  function MinseNum(){
+    setnum(num - 1)
+  }
+  useEffect(()=>{
+    console.log(num)
+  },[num])
+  return (
+    <div>
+    <button onClick={PlusNum} className="btn">+</button>
+    <button onClick={MinseNum} className="btn">-</button>
+    {num}
+    </div>
+    
+  )
+}
+*/
+
+/////////////////////////////////// useRef
+/*
+export default function useRef (){
+  let f = useRef()
+  useEffect(()=>{
+    f.current.focus()
+  },[])
+  return (
+    <div>
+      <input ref={f}/>
+    </div>
+  )
+}
+*/
+
+/////////////////////////////////// useReducer
+/*
+export default function useReducer (){
+  let inittialvalue = 0;
+  let [state,dispatch] = useReducer(reducer,inittialvalue)
+  function reducer(state,action){
+    switch(action){
+      case "plus":
+        return state + 1
+      case "minse":
+        return state - 1
+      case "reset":
+        return 0
+        default:
+          return state
+    }
+  }
+  return (
+    <div>
+      <button onClick={()=>dispatch("plus")} className="btn">+</button>
+      <button onClick={()=>dispatch("minse")} className="btn">-</button>
+      <button onClick={()=>dispatch("reset")} className="btn">reset</button>
+      {state}
+      </div>
+  )
+}
+*/
+
+/////////////////////////////////// useMemo
+/*
+export default function useMemo (){
+
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  let randombgC = "#" + randomColor;
+  let [next,setNext] = useState(0)
+  let [prev,setPrev] = useState(0) 
+  let ChangeColor = useMemo(() => {
+    return(
+      <div className="usememo" style={{backgroundColor:randombgC}}>+ </div>
+      )
+  },[prev])
+  return (
+    <div>
+      {ChangeColor}
+      <button onClick={()=>setPrev(prev + 1)} className="btn">prev</button>
+      <button onClick={()=>setNext(next + 1)} className="btn">next</button>
+    </div>
+  )
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
